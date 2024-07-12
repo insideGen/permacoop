@@ -23,7 +23,9 @@ export class PayrollElementsTableFactory {
       'payroll-elements-paidLeaves',
       'payroll-elements-unpaidLeaves',
       'payroll-elements-medicalLeaves',
-      'payroll-elements-specialLeaves'
+      'payroll-elements-specialLeaves',
+      'payroll-elements-postponedWorkedFreeDayLeaves',
+      'payroll-elements-relocationLeaves'
     ];
 
     const rows = [];
@@ -59,6 +61,12 @@ export class PayrollElementsTableFactory {
         })
         .template('pages/payroll_elements/_leaves.njk', {
           leaves: item.exceptionalLeaves
+        })
+        .template('pages/payroll_elements/_leaves.njk', {
+          leaves: item.postponedWorkedFreeDayLeaves
+        })
+        .template('pages/payroll_elements/_leaves.njk', {
+          leaves: item.relocationLeaves
         })
         .build();
 

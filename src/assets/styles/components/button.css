@@ -35,6 +35,14 @@
   padding: 0;
   width: var(--button-size, calc(4 * var(--w)));
   height: var(--button-size, calc(4 * var(--w)));
-  display: grid;
+  display: inline-grid;
   place-items: center;
+}
+
+button.pc-btn:disabled {
+  cursor: default;
+}
+
+a.pc-btn[aria-current='page'] {
+  background-color: var(--hover-tint);
 }
